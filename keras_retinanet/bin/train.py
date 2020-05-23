@@ -264,6 +264,23 @@ def create_generators(args, preprocess_image):
             **common_args
         )
     elif args.dataset_type == 'pascal':
+        train_generator = VisDroneGenerator(
+            args.pascal_path,
+            'train',
+            image_extension=args.image_extension,
+            transform_generator=transform_generator,
+            visual_effect_generator=visual_effect_generator,
+            **common_args
+        )
+
+        validation_generator = VisDroneGenerator(
+            args.pascal_path,
+            'val',
+            image_extension=args.image_extension,
+            shuffle_groups=False,
+            **common_args
+        )
+    elif args.dataset_type == 'visdrone':
         train_generator = PascalVocGenerator(
             args.pascal_path,
             'train',
