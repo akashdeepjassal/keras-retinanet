@@ -404,6 +404,10 @@ def parse_args(args):
     pascal_parser.add_argument('pascal_path', help='Path to dataset directory (ie. /tmp/VOCdevkit).')
     pascal_parser.add_argument('--image-extension',   help='Declares the dataset images\' extension.', default='.jpg')
 
+    visdrone_parser = subparsers.add_parser('visdrone')
+    visdrone_parser.add_argument('pascal_path', help='Path to dataset directory (ie. /tmp/VOCdevkit).')
+    visdrone_parser.add_argument('--image-extension',   help='Declares the dataset images\' extension.', default='.jpg')
+
     kitti_parser = subparsers.add_parser('kitti')
     kitti_parser.add_argument('kitti_path', help='Path to dataset directory (ie. /tmp/kitti).')
 
